@@ -1,0 +1,19 @@
+workflows:
+ react-native:
+  name: React Native App
+  environment: 
+    vars:
+      XCODE_WORKSPACE: "{{ADD WORKSPACE NAME HERE}}"
+      XCODE_SCHEME: "{{ADD SCHEME NAME HERE}}"
+    node: latest
+  scripts:
+    - yarn install
+    - echo "sdk.dir=$HOME/programs/android-sdk-macosx" > "$FCI_BUILD_DIR/android/local.properties"
+    - |
+      # build Android
+      cd android
+      ./gradlew clean && ./gradlew assembleRelease
+  artifacts:
+    - android/app/build/outputs/**/*.apk
+
+
