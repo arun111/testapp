@@ -22,5 +22,9 @@ workflows:
       ./gradlew clean && ./gradlew assembleRelease
   artifacts:
     - android/app/build/outputs/**/*.apk
+  publishing:
+        email:
+          recipients:
+            - arunkumarkv08@gmail.com
 
 
