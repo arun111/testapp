@@ -1,6 +1,6 @@
 workflows:
  react-native:
-  name: React Native App
+  name: React Native Apptest
   environment: 
     vars:
       XCODE_WORKSPACE: "{{ADD WORKSPACE NAME HERE}}"
